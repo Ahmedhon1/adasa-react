@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Cairo', system-ui, sans-serif;
+  --color-page: #0b0b0d;
+  --color-surface: #15151a;
+  --color-line: #2a2a33;
+  --color-ink: #f5f5f7;
+  --color-muted: #9a9aa6;
+  --color-body: #d4d4dc;
+  --color-accent: #f97316;
+  --color-accent-2: #fb923c;
+}
+
+@layer base {
+  body {
+    @apply bg-page text-ink antialiased leading-[1.7];
+  }
+  h1, h2, h3 {
+    @apply font-bold;
+  }
+  button, input {
+    font: inherit;
+  }
+  button {
+    cursor: pointer;
+  }
+  a {
+    color: inherit;
+  }
+}
+
+@utility wrap {
+  width: min(1200px, 92%);
+  margin-inline: auto;
+}
+
+@utility btn {
+  @apply inline-flex items-center gap-2 px-[22px] py-3 rounded-full border border-line bg-surface text-ink transition-colors hover:border-accent;
+}
+
+@utility btn-primary {
+  @apply bg-accent border-accent text-white font-semibold hover:bg-accent-2 hover:border-accent-2;
+}
+
+@utility btn-sm {
+  @apply px-4 py-[9px] text-[.9rem];
+}
+
+@utility eyebrow {
+  @apply inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-accent/40 bg-accent/10 text-accent text-[.9rem];
+}
